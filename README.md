@@ -36,8 +36,19 @@ The RSA program is designed to encrypt and decrypt messages securely. The algori
 #### Key Generation
 The program generates public and private keys using the chosen prime numbers P and Q, along with the public exponent E.
 
-```{java}
+
 // Key generation
 BigInteger n = p.multiply(q);
 BigInteger m = (p.subtract(BigInteger.ONE)).multiply(q.subtract(BigInteger.ONE));
 BigInteger d = e.modInverse(m);
+
+// Encryption
+byte[] msgBytes = "thank mister for this course".getBytes(StandardCharsets.UTF_8);
+BigInteger[] encrypted = encrypt(msgBytes, e, n);
+
+// Decryption
+BigInteger[] decrypted = decrypt(encrypted, d, n);
+String decryptedMessage = new String(arrayToBytes(decrypted), StandardCharsets.UTF_8);
+
+conclusion
+In conclusion, the RSA encryption and decryption program aims to provide a secure mechanism for protecting sensitive information. The unique parameter values enhance the program's resilience against potential vulnerabilities
