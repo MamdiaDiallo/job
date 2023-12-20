@@ -9,7 +9,7 @@ output: pdf_document
 1. Mamoudou Diallo
 
 **Campus:**
-[Name of the Campus]
+ESTIAM LYON
 
 ---
 
